@@ -18,11 +18,18 @@ class App extends Component {
      ninjas: ninjas
    })
   }
+  // -delete-
+  deleteNinja = (id) => {
+    const filterNinjas = this.state.ninjas.filter(ninja => {
+      return ninja.id !== id;
+    })
+    this.setState({ ninjas: filterNinjas})
+  }
 
   render() {
     return (
       <div className="App">
-        <Ninja ninjas={this.state.ninjas} />
+        <Ninja deleteNinja= {this.deleteNinja} ninjas={this.state.ninjas} />
         <AddNinja addingNinja={this.addNinja}/>
       </div>
     );
