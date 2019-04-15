@@ -13,7 +13,7 @@ class AddNinja extends Component {
 	}
 	onFormSubmit = (e) => {
 		e.preventDefault();
-		console.log(this.state)
+		this.props.addingNinja(this.state)
 	}
 
 	render(){
